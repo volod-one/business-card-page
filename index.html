@@ -9,6 +9,7 @@
     <meta name="description" content="Business card web-page of Volodymyr Balashov">
     <link rel="stylesheet" href="./css/reset.css"/>
     <link rel="stylesheet" href="./css/style.css"/>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <title>Volod.Balashov</title>
 </head>
 
@@ -45,7 +46,46 @@
             </div>
         </div>
     </div>
+    <section class="contact">
+        <div class="container">
+            <div class="contact__body">
+                <div class="contact__info">
+                    <h2 class="contact__title">Let's talk</h2>
+                    <p class="contact__text">Have a question or just want to say hi? I'd love to
+                        hear from you.</p>
+                    <a href="mailto:contact@volod.one" class="contact__email">contact@volod.one</a>
+                </div>
+                <div class="contact__divider"><span>or</span></div>
+                <form class="contact__form" id="contactForm" novalidate>
+                    <input type="hidden" name="access_key"
+                           value="6c34364d-ba85-48d1-a176-7bc06b257da8">
+                    <label>
+                        <input type="text" name="_honey" style="display:none" tabindex="-1"
+                               autocomplete="off">
+                    </label>
+                    <div class="contact__field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com"
+                               required>
+                    </div>
+                    <div class="contact__field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="What's on your mind?"
+                                  rows="5" required></textarea>
+                    </div>
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAEZnnqTV4dXTkS_h"
+                         data-action="contact"></div>
+                    <button type="submit" class="contact__submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
 </main>
+<script src="./js/main.js" defer></script>
 </body>
 
 </html>
